@@ -4,8 +4,8 @@ In underwater image enhancement (UIE), convolutional neural networks (CNN) have 
 # Our proposed Mamb-UIE
 ![整体结构图](https://github.com/user-attachments/assets/e979c28e-05b1-4085-8d32-89b71ba5597c)
 
-# 视频展示
- ![Demo](path/to/demo.gif)
+# Video Display
+
 
 ## Compared to other methods
 ![image](https://github.com/user-attachments/assets/e91ae8ed-2374-4845-bee1-64e99b243cdf)
