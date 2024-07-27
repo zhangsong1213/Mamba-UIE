@@ -1,5 +1,9 @@
-# Mamba-UIE
-Mamba-UIE: Enhancing Underwater Images with Physical Model Constraint
+# Mamba-UIE: Enhancing Underwater Images with Physical Model Constraint
+In underwater image enhancement (UIE), convolutional neural networks (CNN) have inherent limitations in modeling long-range dependencies and are less effective in recovering global features. While Transformers excel at modeling long-range dependencies, their quadratic computational complexity with increasing image resolution presents significant efficiency challenges. Additionally, most supervised learning methods lack effective physical model constraint, which can lead to insufficient realism and overfitting in generated images. To address these issues, we propose a physical model constraint-based underwater image enhancement framework, Mamba-UIE. Specifically, we decompose the input image into four components: underwater scene radiance, direct transmission map, backscatter transmission map, and global background light. These components are reassembled according to the revised underwater image formation model, and the reconstruction consistency constraint is applied between the reconstructed image and the original image, thereby achieving effective physical constraint on the underwater image enhancement process. To tackle the quadratic computational complexity of Transformers when handling long sequences, we introduce the Mamba-UIE network based on linear complexity state space models (SSM). By incorporating the Mamba in Convolution block, long-range dependencies are modeled at both the channel and spatial levels, while the CNN backbone is retained to recover local features and details. Extensive experiments on three public datasets demonstrate that our proposed Mamba-UIE outperforms existing state-of-the-art methods, achieving a PSNR of 27.13 and an SSIM of 0.93 on the UIEB dataset.
+![image](https://github.com/user-attachments/assets/a9c2697f-033b-4f5f-be2f-8a004f8af680)
+
+## Compared to other methods
+![image](https://github.com/user-attachments/assets/e91ae8ed-2374-4845-bee1-64e99b243cdf)
 
 ## Train the Model
 python main.py
@@ -9,24 +13,4 @@ python eval.py
 
 ## Environment
 environment.txt
-
-## Compared to other methods
-Methods	UIEB	EUVP
-	MSE(×103)↓	PSNR(dB)↑	SSIM↑	UIQM↑	MSE(×103)↓	PSNR(dB)↑	SSIM↑	UIQM↑
-BTLM 2020	1.34±1.61	19.11±4.27	0.77±0.09	2.59±0.65	0.93±0.39	18.80±1.77	0.63±0.06	2.10±0.52
-UNTV 2021	1.59±1.00	16.80±2.42	0.56±0.11	1.94±0.71	1.13±0.65	18.20±2.25	0.54±0.08	1.83±0.73
-MLLE 2022	1.17±0.88	18.59±3.28	0.73±0.09	2.25±0.65	1.71±0.79	16.23±1.96	0.56±0.07	1.92±0.53
-HLRP 2022	2.97±1.06	13.68±1.54	0.23±0.08	2.71±0.79	3.58±1.62	12.95±1.74	0.14±0.04	2.81±0.70
-PCDE 2023	1.85±1.41	16.67±3.30	0.66±0.15	2.06±0.82	1.84±0.70	15.78±1.58	0.55±0.08	1.71±0.77
-WWPF 2023	1.05±0.79	18.95±3.04	0.78±0.08	2.52±0.51	1.41±0.66	17.05±1.89	0.60±0.06	2.37±0.39
-HFM 2024	0.65±0.52	21.22±3.41	0.82±0.07	2.83±0.42	0.71±0.07	20.50±2.24	0.66±0.38	3.04±0.26
-Ucolor 2022	0.30±0.34	25.08±3.79	0.91±0.06	3.20±0.33	0.24±0.17	25.16±2.68	0.79±0.06	3.30±0.27
-PUIE 2022	0.44±0.45	23.49±4.12	0.85±0.08	3.12±0.38	-	-	-	-
-USUIR 2022	0.34±0.38	25.09±4.59	0.86±0.06	3.07±0.34	0.50±0.35	21.94±2.62	0.68±0.05	2.67±0.21
-U-shape 2023	0.63±0.49	21.31±3.31	0.80±0.08	3.19±0.34	0.72±0.11	20.89±4.22	0.84±0.91	3.31±0.30
-UDAformer 2023	0.26±0.38	26.80±5.10	0.93±0.05	3.10±0.34	0.19±0.17	26.33±2.89	0.82±0.06	3.22±0.33
-LiteEnhance 2024	0.36±0.43	24.79±4.49	0.90±0.07	3.10±0.36	0.21±0.18	25.97±2.79	0.82±0.06	3.13±0.38
-DICAM 2024	0.28±0.37	27.01±5.84	0.93±0.06	3.09±0.39	0.19±0.17	26.42±2.88	0.82±0.07	3.13±0.40
-Mamba-UIE	0.26±0.37	27.13±5.49	0.93±0.06	3.10±0.36	0.20±0.18	26.19±2.91	0.83±0.06	3.16±0.35
-
 
